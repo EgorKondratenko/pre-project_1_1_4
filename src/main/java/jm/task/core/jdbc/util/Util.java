@@ -14,11 +14,13 @@ public class Util {
     public static Connection getConnection() {
 
         String connections = "jdbc:mysql://" + DB_HOST + ":" + DB_PORT + "/" + DB_NAME;
+        Connection connection = null;
 
         try {
-            return DriverManager.getConnection(connections, DB_USER, DB_PASS);
+             connection = DriverManager.getConnection(connections, DB_USER, DB_PASS);
         } catch (SQLException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         }
+        return connection;
     }
 }

@@ -8,8 +8,8 @@ import java.sql.SQLException;
 import java.util.List;
 
 public class UserServiceImpl implements UserService {
+    private UserService userService;
     private final UserDaoJDBCImpl userDaoJDBC = new UserDaoJDBCImpl();
-
     @Override
     public void createUsersTable() {
         userDaoJDBC.createUsersTable();
